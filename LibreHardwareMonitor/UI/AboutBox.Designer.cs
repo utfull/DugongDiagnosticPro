@@ -85,7 +85,7 @@ namespace LibreHardwareMonitor.UI
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(250, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Copyright © Dugong Dignostic Pro";
+            this.label2.Text = "Copyright © Dugong International Private Limited";
             //
             // label3
             //
@@ -106,7 +106,7 @@ namespace LibreHardwareMonitor.UI
             this.projectLinkLabel.Size = new System.Drawing.Size(82, 13);
             this.projectLinkLabel.TabIndex = 6;
             this.projectLinkLabel.TabStop = true;
-            this.projectLinkLabel.Text = "Project Website";
+            this.projectLinkLabel.Text = "Product Website";
             this.projectLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel_LinkClicked);
             //
             // flowLayoutPanel1
@@ -128,7 +128,7 @@ namespace LibreHardwareMonitor.UI
             this.licenseLinkLabel.Size = new System.Drawing.Size(107, 13);
             this.licenseLinkLabel.TabIndex = 9;
             this.licenseLinkLabel.TabStop = true;
-            this.licenseLinkLabel.Text = "Licensing Information";
+            this.licenseLinkLabel.Text = "Contact Support";
             this.licenseLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel_LinkClicked);
             //
             // AboutBox

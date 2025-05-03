@@ -4,7 +4,10 @@
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>DugongDignosticPro</AssemblyName>
     <AssemblyTitle>Dugong Dignostic Pro</AssemblyTitle>
-    <Copyright>Dugong Dignostic Pro</Copyright>
+    <Copyright>Dugong International Private Limited</Copyright>
+    <Company>Dugong International Private Limited</Company>
+    <Description>Dugong dignostic Pro is a powerful desktop utility designed to quickly diagnose and troubleshoot hardware issues on your Dugong PC. From CPU performance and memory health to disk integrity and GPU stability, Dugong delivers accurate diagnostics with an intuitive interface. Ideal for everyday users, Dugong helps you pinpoint problems, export reports, and keep your system running at peak performance.</Description>
+    <PackageProjectUrl>https://www.dugong.in/dugong-dignostic-pro</PackageProjectUrl>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
     <ApplicationManifest>Resources\app.manifest</ApplicationManifest>
