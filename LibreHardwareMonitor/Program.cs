@@ -49,7 +49,7 @@ public static class Program
         if (!IsFileAvailable("Aga.Controls.dll"))
             return false;
 
-        if (!IsFileAvailable("LibreHardwareMonitorLib.dll"))
+        if (!IsFileAvailable("LibreHardwareMonitorLib.dll")) // Keep original DLL name reference
             return false;
 
         if (!IsFileAvailable("OxyPlot.dll"))

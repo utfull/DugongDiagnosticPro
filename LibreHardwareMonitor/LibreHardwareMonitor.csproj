@@ -2,9 +2,9 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyName>LibreHardwareMonitor</AssemblyName>
-    <AssemblyTitle>Libre Hardware Monitor</AssemblyTitle>
-    <Copyright>LibreHardwareMonitor</Copyright>
+    <AssemblyName>DugongDignosticPro</AssemblyName>
+    <AssemblyTitle>Dugong Dignostic Pro</AssemblyTitle>
+    <Copyright>Dugong Dignostic Pro</Copyright>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
     <ApplicationManifest>Resources\app.manifest</ApplicationManifest>
@@ -13,6 +13,7 @@
     <OutputPath>..\bin\$(Configuration)\</OutputPath>
 	  <LangVersion>latest</LangVersion>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -26,6 +27,7 @@
     <PackageReference Include="OxyPlot.Core" Version="2.2.0" />
     <PackageReference Include="OxyPlot.WindowsForms" Version="2.2.0" />
     <PackageReference Include="System.Management" Version="9.0.4" />
+    <PackageReference Include="System.Resources.Extensions" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web" />
