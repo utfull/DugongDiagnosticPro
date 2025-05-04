@@ -114,7 +114,7 @@ public class HttpServer
 
             _listener.Prefixes.Clear();
             _listener.Prefixes.Add(prefix);
-            _listener.Realm = "Libre Hardware Monitor";
+            _listener.Realm = "Dugong Diagnostic Pro";
             _listener.AuthenticationSchemes = AuthEnabled ? AuthenticationSchemes.Basic : AuthenticationSchemes.Anonymous;
             _listener.Start();
 

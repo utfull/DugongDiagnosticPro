@@ -84,6 +84,15 @@ public sealed partial class MainForm : Form
 
         Font = SystemFonts.MessageBoxFont;
         treeView.Font = SystemFonts.MessageBoxFont;
+        
+        // Set the icon directly from the file
+        try
+        {
+            string iconPath = Path.Combine(Application.StartupPath, "Resources", "dugonglogo1.ico");
+            if (File.Exists(iconPath))
+                this.Icon = new Icon(iconPath);
+        }
+        catch { }
 
         // Set the bounds immediately, so that our child components can be
         // properly placed.
@@ -121,7 +130,7 @@ public sealed partial class MainForm : Form
         }
 
         TreeModel treeModel = new();
-        _root = new Node(Environment.MachineName) { Image = EmbeddedResources.GetImage("computer.png") };
+        _root = new Node(Environment.MachineName) { Image = EmbeddedResources.GetImage("dugonglogo1.png") };
 
         treeModel.Nodes.Add(_root);
         treeView.Model = treeModel;

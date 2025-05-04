@@ -6,6 +6,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using LibreHardwareMonitor.Hardware;
 using LibreHardwareMonitor.Utilities;
@@ -50,8 +52,14 @@ public class SystemTray : IDisposable
         {
             SendHideShowCommand();
         };
-        _mainIcon.Icon = EmbeddedResources.GetIcon("smallicon.ico");
-        _mainIcon.Text = "Libre Hardware Monitor";
+        // Load the icon directly from the file
+        string iconPath = Path.Combine(Application.StartupPath, "Resources", "dugonglogo1.ico");
+        if (File.Exists(iconPath))
+            _mainIcon.Icon = new Icon(iconPath);
+        else
+            _mainIcon.Icon = EmbeddedResources.GetIcon("dugonglogo1.ico");
+            
+        _mainIcon.Text = "Dugong Diagnostic Pro";
     }
 
     private void HardwareRemoved(IHardware hardware)

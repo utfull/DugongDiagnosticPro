@@ -6,6 +6,7 @@
 
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using LibreHardwareMonitor.UI.Themes;
 
@@ -17,11 +18,23 @@ public sealed partial class AboutBox : Form
     {
         InitializeComponent();
         Font = SystemFonts.MessageBoxFont;
+        
+        // Load the Dugong logo directly from the file
+        try
+        {
+            string logoPath = Path.Combine(Application.StartupPath, "Resources", "dugonglogo1.png");
+            if (File.Exists(logoPath))
+                pictureBox1.Image = Image.FromFile(logoPath);
+            else
+                pictureBox1.Image = Utilities.EmbeddedResources.GetImage("dugonglogo1.png");
+        }
+        catch { }
+        
         label3.Text = "Version " + Application.ProductVersion;
         projectLinkLabel.Links.Remove(projectLinkLabel.Links[0]);
-        projectLinkLabel.Links.Add(0, projectLinkLabel.Text.Length, "https://www.dugong.in/dugong-dignostic-pro");
+        projectLinkLabel.Links.Add(0, projectLinkLabel.Text.Length, "https://www.dugong.in/dugong-diagnostic-pro");
         licenseLinkLabel.Links.Remove(licenseLinkLabel.Links[0]);
-        licenseLinkLabel.Links.Add(0, licenseLinkLabel.Text.Length, "mailto:Dignostic@dugong.in");
+        licenseLinkLabel.Links.Add(0, licenseLinkLabel.Text.Length, "mailto:Diagnostic@dugong.in");
         Theme.Current.Apply(this);
     }
 
