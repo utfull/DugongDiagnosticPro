@@ -11,7 +11,7 @@
     <PackageLicense>https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/blob/master/Licenses/LICENSE</PackageLicense>
     <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/DugongDiagnosticPro/DugongDiagnosticPro</PackageProjectUrl>
-    <PackageTags>libre open hardware monitor monitoring system logging cpu gpu</PackageTags>
+    <PackageTags>dugong diagnostic pro monitoring system logging cpu gpu</PackageTags>
     <PackageVersion>$(Version)</PackageVersion>
     <Pack>true</Pack>
     <RepositoryUrl>https://github.com/DugongDiagnosticPro/DugongDiagnosticPro</RepositoryUrl>

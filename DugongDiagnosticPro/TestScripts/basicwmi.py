@@ -4,7 +4,7 @@
 # * python.exe -m pip install wmi
 #
 # Usage:
-# * !! Make sure librehardwaremonitor is running !!
+# * !! Make sure Dugong Diagnostic Pro is running !!
 # * python basicwmi.py
 ################################################################
 
@@ -14,4 +14,4 @@ hwmon = wmi.WMI(namespace="root\DugongDiagnosticPro")
 sensors = hwmon.Sensor(SensorType="Control")
 
 for s in sensors:
-	print s
+    print(s)
