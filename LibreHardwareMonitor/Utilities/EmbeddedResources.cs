@@ -1,7 +1,7 @@
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // Copyright (C) LibreHardwareMonitor and Contributors.
-// Partial Copyright (C) Michael Möller <mmoeller@openhardwaremonitor.org> and Contributors.
+// Partial Copyright (C) Michael Mï¿½ller <mmoeller@openhardwaremonitor.org> and Contributors.
 // All Rights Reserved.
 
 using System.Drawing;
@@ -14,7 +14,7 @@ public class EmbeddedResources
 {
     public static Image GetImage(string name)
     {
-        name = "LibreHardwareMonitor.Resources." + name;
+        name = "DugongDiagnosticPro.Resources." + name;
         string[] names = Assembly.GetExecutingAssembly().GetManifestResourceNames();
 
         for (int i = 0; i < names.Length; i++)
@@ -41,7 +41,7 @@ public class EmbeddedResources
 
     public static Icon GetIcon(string name)
     {
-        name = "LibreHardwareMonitor.Resources." + name;
+        name = "DugongDiagnosticPro.Resources." + name;
         string[] names = Assembly.GetExecutingAssembly().GetManifestResourceNames();
         for (int i = 0; i < names.Length; i++)
         {

@@ -52,7 +52,7 @@ public class StartupManager
             {
                 using (RegistryKey registryKey = Registry.CurrentUser.OpenSubKey(RegistryPath))
                 {
-                    string value = (string)registryKey?.GetValue(nameof(LibreHardwareMonitor));
+                    string value = (string)registryKey?.GetValue("DugongDiagnosticPro");
 
                     if (value != null)
                         _startup = value == Application.ExecutablePath;
@@ -131,7 +131,7 @@ public class StartupManager
     {
         try
         {
-            return TaskService.Instance.AllTasks.FirstOrDefault(x => x.Name.Equals(nameof(LibreHardwareMonitor), StringComparison.OrdinalIgnoreCase));
+            return TaskService.Instance.AllTasks.FirstOrDefault(x => x.Name.Equals("DugongDiagnosticPro", StringComparison.OrdinalIgnoreCase));
         }
         catch
         {
@@ -142,7 +142,7 @@ public class StartupManager
     private void CreateTask()
     {
         TaskDefinition taskDefinition = TaskService.Instance.NewTask();
-        taskDefinition.RegistrationInfo.Description = "Starts LibreHardwareMonitor on Windows startup.";
+        taskDefinition.RegistrationInfo.Description = "Starts Dugong Diagnostic Pro on Windows startup.";
 
         taskDefinition.Triggers.Add(new LogonTrigger());
 
@@ -157,7 +157,7 @@ public class StartupManager
 
         taskDefinition.Actions.Add(new ExecAction(Application.ExecutablePath, "", Path.GetDirectoryName(Application.ExecutablePath)));
 
-        TaskService.Instance.RootFolder.RegisterTaskDefinition(nameof(LibreHardwareMonitor), taskDefinition);
+        TaskService.Instance.RootFolder.RegisterTaskDefinition("DugongDiagnosticPro", taskDefinition);
     }
 
     private static void DeleteTask()
@@ -169,12 +169,12 @@ public class StartupManager
     private static void CreateRegistryKey()
     {
         RegistryKey registryKey = Registry.CurrentUser.CreateSubKey(RegistryPath);
-        registryKey?.SetValue(nameof(LibreHardwareMonitor), Application.ExecutablePath);
+        registryKey?.SetValue("DugongDiagnosticPro", Application.ExecutablePath);
     }
 
     private static void DeleteRegistryKey()
     {
         RegistryKey registryKey = Registry.CurrentUser.CreateSubKey(RegistryPath);
-        registryKey?.DeleteValue(nameof(LibreHardwareMonitor));
+        registryKey?.DeleteValue("DugongDiagnosticPro");
     }
 }

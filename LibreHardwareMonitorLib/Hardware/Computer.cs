@@ -301,7 +301,7 @@ public class Computer : IComputer
             using StringWriter w = new(CultureInfo.InvariantCulture);
 
             w.WriteLine();
-            w.WriteLine(nameof(LibreHardwareMonitor) + " Report");
+            w.WriteLine("DugongDiagnosticPro Report");
             w.WriteLine();
 
             Version version = typeof(Computer).Assembly.GetName().Version;

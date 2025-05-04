@@ -457,7 +457,7 @@ public class HttpServer
     private void ServeResourceFile(HttpListenerResponse response, string name, string ext)
     {
         // resource names do not support the hyphen
-        name = "LibreHardwareMonitor.Resources." +
+        name = "DugongDiagnosticPro.Resources." +
                name.Replace("custom-theme", "custom_theme");
 
         string[] names = Assembly.GetExecutingAssembly().GetManifestResourceNames();
@@ -499,7 +499,7 @@ public class HttpServer
 
     private void ServeResourceImage(HttpListenerResponse response, string name)
     {
-        name = "LibreHardwareMonitor.Resources." + name;
+        name = "DugongDiagnosticPro.Resources." + name;
 
         string[] names = Assembly.GetExecutingAssembly().GetManifestResourceNames();
 

@@ -13,7 +13,7 @@ namespace LibreHardwareMonitor.UI;
 public class ShowDesktop : IDisposable
 {
     private readonly NativeWindow _referenceWindow;
-    private readonly string _referenceWindowCaption = "LibreHardwareMonitorShowDesktopReferenceWindow";
+    private readonly string _referenceWindowCaption = "DugongDiagnosticProShowDesktopReferenceWindow";
     private readonly System.Threading.Timer _timer;
     private bool _showDesktop;
 

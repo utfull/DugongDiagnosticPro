@@ -15,7 +15,7 @@ namespace LibreHardwareMonitor.Utilities;
 
 public class Logger
 {
-    private const string FileNameFormat = "LibreHardwareMonitorLog-{0:yyyy-MM-dd}{1}.csv";
+    private const string FileNameFormat = "DugongDiagnosticProLog-{0:yyyy-MM-dd}{1}.csv";
 
     private readonly IComputer _computer;
 
