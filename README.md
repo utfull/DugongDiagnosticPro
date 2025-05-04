@@ -1,13 +1,13 @@
 # DugongDiagnosticPro
-[![GitHub license](https://img.shields.io/github/license/DugongDiagnosticPro/DugongDiagnosticPro)](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/blob/master/LICENSE) [![Nuget](https://img.shields.io/nuget/v/LibreHardwareMonitorLib)](https://www.nuget.org/packages/LibreHardwareMonitorLib/) [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/LibreHardwareMonitorLib?label=nuget-pre)](https://www.nuget.org/packages/LibreHardwareMonitorLib/) [![Nuget](https://img.shields.io/nuget/dt/LibreHardwareMonitorLib?label=nuget-downloads)](https://www.nuget.org/packages/LibreHardwareMonitorLib/)
+[![GitHub license](https://img.shields.io/github/license/DugongDiagnosticPro/DugongDiagnosticPro)](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/blob/master/LICENSE)
 
-Libre Hardware Monitor, a fork of Open Hardware Monitor, is free software that can monitor the temperature sensors, fan speeds, voltages, load and clock speeds of your computer. 
+Dugong Diagnostic Pro is a powerful desktop utility designed to quickly diagnose and troubleshoot hardware issues on your Dugong PC. From CPU performance and memory health to disk integrity and GPU stability, Dugong delivers accurate diagnostics with an intuitive interface.
 
 ## What's included?
 | Name| .NET | Build Status |
 | --- | --- | --- | 
 | **DugongDiagnosticPro** <br /> Windows Forms based application that presents all data in a graphical interface | .NET Framework 4.7.2 | [![Build status](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/workflows/CI/badge.svg)](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/actions) | 
-| **LibreHardwareMonitorLib** <br /> Library that allows you to use all features in your own application | .NET Framework 4.7.2, .NET 6.0, and .NET 8.0 | [![Build status](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/workflows/CI/badge.svg)](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/actions) | 
+| **DugongDiagnosticProLib** <br /> Library that allows you to use all features in your own application | .NET Framework 4.7.2, .NET 6.0, and .NET 8.0 | [![Build status](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/workflows/CI/badge.svg)](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/actions) | 
 
 ## What can it do?
 You can read information from devices such as:
@@ -18,18 +18,15 @@ You can read information from devices such as:
 - Network cards
 
 ## Where can I download it?
-You can download the latest release [here](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/releases).
-
-### Nightly builds
-If you have a **GitHub** account, you can download nightly builds [here](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/actions). Otherwise, you can download the *latest* nightly build [here](https://nightly.link/DugongDiagnosticPro/DugongDiagnosticPro/workflows/master/master/DugongDiagnosticPro-net472.zip).
+You can download the latest release from our website [www.dugong.in/dugong-diagnostic-pro](https://www.dugong.in/dugong-diagnostic-pro).
 
 ## How can I help improve it?
-The DugongDiagnosticPro team welcomes feedback and contributions!<br/>
+The Dugong Diagnostic Pro team welcomes feedback and contributions!<br/>
 You can check if it works properly on your motherboard. For many manufacturers, the way of reading data differs a bit, so if you notice any inaccuracies, please send us a pull request. If you have any suggestions or improvements, don't hesitate to create an issue.
 
 ## Developer information
 **Integrate the library in own application**
-1. Add the [LibreHardwareMonitorLib](https://www.nuget.org/packages/LibreHardwareMonitorLib/) NuGet package to your application.
+1. Add the DugongDiagnosticProLib NuGet package to your application.
 2. Use the sample code below.
 
 
@@ -96,4 +93,4 @@ Some sensors require administrator privileges to access the data. Restart your I
 
 
 ## License
-DugongDiagnosticPro is free and open source software licensed under MPL 2.0. You can use it in private and commercial projects. Keep in mind that you must include a copy of the license in your project.
+Dugong Diagnostic Pro is free and open source software licensed under MPL 2.0. You can use it in private and commercial projects. Keep in mind that you must include a copy of the license in your project.

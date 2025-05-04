@@ -14,6 +14,9 @@ namespace DugongDiagnosticPro;
 
 public static class Program
 {
+    // Set this to true when testing on Windows, set to false for production
+    private static readonly bool enableWindowsTest = true;
+    
     [STAThread]
     public static void Main()
     {
@@ -59,7 +62,7 @@ public static class Program
         if (!IsFileAvailable("Aga.Controls.dll"))
             return false;
 
-        if (!IsFileAvailable("LibreHardwareMonitorLib.dll")) // Keep original DLL name reference
+        if (!IsFileAvailable("DugongDiagnosticProLib.dll"))
             return false;
 
         if (!IsFileAvailable("OxyPlot.dll"))
@@ -73,6 +76,10 @@ public static class Program
     
     private static bool IsDugongSystem()
     {
+        // For testing on Windows, return true if enableWindowsTest is true
+        if (enableWindowsTest)
+            return true;
+            
         try
         {
             // Check common registry locations for the "dugong" keyword
@@ -104,15 +111,12 @@ public static class Program
                 }
             }
             
-            // For testing purposes, allowing the app to run on any system
-            return true;
-            
-            // return false;
+            return false;
         }
         catch (Exception)
         {
-            // If there's an error accessing the registry, allow the app to run for testing
-            return true;
+            // If there's an error accessing the registry, don't allow the app to run
+            return false;
         }
     }
 }
