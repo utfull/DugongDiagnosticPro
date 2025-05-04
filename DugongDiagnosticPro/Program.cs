@@ -15,7 +15,7 @@ namespace DugongDiagnosticPro;
 public static class Program
 {
     // Set this to true when testing on Windows, set to false for production
-    private static readonly bool enableWindowsTest = true;
+    private static readonly bool enableWindowsTest = false;
     
     [STAThread]
     public static void Main()
