@@ -1011,6 +1011,28 @@ public sealed partial class MainForm : Form
     {
         _ = new AboutBox().ShowDialog();
     }
+    
+    protected override void OnLoad(EventArgs e)
+    {
+        base.OnLoad(e);
+        
+        // Add "Check for Updates" menu item to Help menu
+        ToolStripMenuItem updateItem = new ToolStripMenuItem("Check for Updates");
+        updateItem.Click += (s, args) =>
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("explorer.exe", "https://www.dugong.in/dugong-diagnostic-pro");
+            }
+            catch { }
+        };
+        
+        // Insert before About menu item
+        if (helpMenuItem.DropDownItems.Count > 0)
+            helpMenuItem.DropDownItems.Insert(0, updateItem);
+        else
+            helpMenuItem.DropDownItems.Add(updateItem);
+    }
 
     private void TreeView_Click(object sender, EventArgs e)
     {
