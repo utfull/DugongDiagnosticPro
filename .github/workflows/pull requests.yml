@@ -46,27 +46,27 @@ jobs:
       - name: Publish netstandard20
         uses: actions/upload-artifact@v4
         with:
-          name: LibreHardwareMonitorLib-netstandard20
+          name: DugongDiagnosticProLib-netstandard20
           path: |
             bin/Release/netstandard2.0
 
       - name: Publish net60
         uses: actions/upload-artifact@v4
         with:
-          name: LibreHardwareMonitorLib-net60
+          name: DugongDiagnosticProLib-net60
           path: |
             bin/Release/net6.0
 
       - name: Publish net80
         uses: actions/upload-artifact@v4
         with:
-          name: LibreHardwareMonitorLib-net70
+          name: DugongDiagnosticProLib-net80
           path: |
             bin/Release/net8.0
 
       - name: Publish nupkg
         uses: actions/upload-artifact@v4
         with:
-          name: LibreHardwareMonitorLib-nupkg
+          name: DugongDiagnosticProLib-nupkg
           path: |
-            bin/Release/LibreHardwareMonitorLib.*.nupkg
+            bin/Release/DugongDiagnosticProLib.*.nupkg

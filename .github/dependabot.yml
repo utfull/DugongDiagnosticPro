@@ -12,9 +12,9 @@ updates:
       interval: "daily"
     open-pull-requests-limit: 10
 
-    # LibreHardwareMonitorLib.csproj
+    # DugongDiagnosticProLib.csproj
   - package-ecosystem: "nuget"
-    directory: "/LibreHardwareMonitorLib" 
+    directory: "/DugongDiagnosticProLib" 
     schedule:
       interval: "daily"
     open-pull-requests-limit: 10
