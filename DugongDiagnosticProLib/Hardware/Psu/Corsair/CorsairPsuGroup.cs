@@ -1,6 +1,7 @@
 ﻿// This Source Code Form is subject to the terms of the GNU Public License, v. 2.0.
 // Copyright(C) 2020 Wilken Gottwalt<wilken.gottwalt@posteo.net>
 // Copyright (C) DugongDiagnosticPro and Contributors.
+// Original Copyright (C) LibreHardwareMonitor and Contributors.
 // All Rights Reserved.
 // Implemented after the Linuix kernel driver corsair_psu by Wilken Gottwalt and contributers
 

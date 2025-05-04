@@ -2,6 +2,7 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // Copyright (C) 2020 Wilken Gottwalt<wilken.gottwalt@posteo.net>
 // Copyright (C) DugongDiagnosticPro and Contributors.
+// Original Copyright (C) LibreHardwareMonitor and Contributors.
 // All Rights Reserved.
 // Implemented after the Linuix kernel driver corsair_psu by Wilken Gottwalt and contributers
 
