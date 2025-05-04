@@ -19,14 +19,36 @@ public sealed partial class AboutBox : Form
         InitializeComponent();
         Font = SystemFonts.MessageBoxFont;
         
-        // Load the Dugong logo directly from the file
+        // Load the Dugong logo directly from the file and resize it
         try
         {
             string logoPath = Path.Combine(Application.StartupPath, "Resources", "dugonglogo1.png");
             if (File.Exists(logoPath))
-                pictureBox1.Image = Image.FromFile(logoPath);
+            {
+                using (Image originalImage = Image.FromFile(logoPath))
+                {
+                    // Create a smaller version of the image (48x48 pixels)
+                    Bitmap resizedImage = new Bitmap(48, 48);
+                    using (Graphics g = Graphics.FromImage(resizedImage))
+                    {
+                        g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                        g.DrawImage(originalImage, 0, 0, 48, 48);
+                    }
+                    pictureBox1.Image = resizedImage;
+                }
+            }
             else
-                pictureBox1.Image = Utilities.EmbeddedResources.GetImage("dugonglogo1.png");
+            {
+                Image originalImage = Utilities.EmbeddedResources.GetImage("dugonglogo1.png");
+                // Create a smaller version of the image (48x48 pixels)
+                Bitmap resizedImage = new Bitmap(48, 48);
+                using (Graphics g = Graphics.FromImage(resizedImage))
+                {
+                    g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                    g.DrawImage(originalImage, 0, 0, 48, 48);
+                }
+                pictureBox1.Image = resizedImage;
+            }
         }
         catch { }
         
