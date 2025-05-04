@@ -5,9 +5,9 @@
 
 version: 2
 updates:
-    # LibreHardwareMonitor.csproj
+    # DugongDiagnosticPro.csproj
   - package-ecosystem: "nuget"
-    directory: "/LibreHardwareMonitor"
+    directory: "/DugongDiagnosticPro"
     schedule:
       interval: "daily"
     open-pull-requests-limit: 10
