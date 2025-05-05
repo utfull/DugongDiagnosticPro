@@ -106,4 +106,5 @@ This software is based on [LibreHardwareMonitor](https://github.com/LibreHardwar
 
 All modifications and distributions by Dugong International Private Limited comply with MPL 2.0 license terms.
 
-🔗 Full license text: [LICENSE.html](./Licenses/LICENSE.html)
+🔗 Full license text:[LICENSE](./Licenses/License.html)
+
