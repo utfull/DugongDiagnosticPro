@@ -16,7 +16,7 @@ namespace DugongDiagnosticPro;
 public static class Program
 {
     // Set this to true when testing on Windows, set to false for production
-    private static readonly bool enableWindowsTest = false;
+    private static readonly bool enableWindowsTest = true;
     
     [STAThread]
     public static void Main()
@@ -62,16 +62,16 @@ public static class Program
                 // If it is a Dugong system, create and show the main form
                 MainForm form = new MainForm();
                 
-                // Close splash screen when main form is loaded
-                form.Load += (sender, args) =>
-                {
-                    splash.StartFadeOut();
-                };
+                // Close splash screen immediately
+                splash.Close();
                 
                 form.FormClosed += delegate
                 {
                     Application.Exit();
                 };
+                
+                // Show the main form
+                form.Show();
             }
         };
         systemCheckTimer.Start();
