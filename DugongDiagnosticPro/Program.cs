@@ -27,56 +27,71 @@ public static class Program
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
         
-        // Always show splash screen first, regardless of system type
+        // Check if it's a Dugong system
         bool isDugongSystem = IsDugongSystem();
-        SplashScreen splash = new SplashScreen(isDugongSystem);
-        splash.Show();
         
-        Application.DoEvents();
-        
-        // Create a timer to check system type after splash screen has been shown for a few seconds
-        Timer systemCheckTimer = new Timer();
-        systemCheckTimer.Interval = 4000; // 4 seconds
-        systemCheckTimer.Tick += (s, e) =>
+        // Create and show splash screen
+        using (SplashScreen splash = new SplashScreen(isDugongSystem))
         {
-            systemCheckTimer.Stop();
+            splash.Show();
             
-            // Now check if it's a Dugong system
-            if (!isDugongSystem)
+            // Force UI update to show splash screen
+            Application.DoEvents();
+            
+            // Create a simple form to host the message loop
+            using (Form dummyForm = new Form())
             {
-                // Keep the splash screen visible until user clicks OK
-                DialogResult result = MessageBox.Show("Dugong Diagnostic Pro only supports Dugong systems.",
-                                                     "Unsupported System",
-                                                     MessageBoxButtons.OK,
-                                                     MessageBoxIcon.Error);
+                dummyForm.FormBorderStyle = FormBorderStyle.None;
+                dummyForm.ShowInTaskbar = false;
+                dummyForm.Opacity = 0;
+                dummyForm.Size = new System.Drawing.Size(1, 1);
                 
-                // Only exit after user clicks OK
-                if (result == DialogResult.OK)
+                // Set up a timer for the splash screen duration
+                bool timerElapsed = false;
+                using (Timer timer = new Timer())
                 {
+                    timer.Interval = 4000; // 4 seconds
+                    timer.Tick += (s, e) =>
+                    {
+                        timer.Stop();
+                        timerElapsed = true;
+                        dummyForm.Close();
+                    };
+                    timer.Start();
+                    
+                    // Run the message loop until the timer elapses
+                    Application.Run(dummyForm);
+                }
+                
+                // After the timer has elapsed, check system type
+                if (!isDugongSystem)
+                {
+                    // Close splash screen
                     splash.Close();
-                    Environment.Exit(0);
+                    
+                    // Show error message
+                    MessageBox.Show("Dugong Diagnostic Pro only supports Dugong systems.",
+                                   "Unsupported System",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Error);
+                    
+                    // Exit application
+                    return;
+                }
+                else
+                {
+                    // Close splash screen
+                    splash.Close();
+                    
+                    // Create and show main form
+                    MainForm mainForm = new MainForm();
+                    mainForm.Show();
+                    
+                    // Run the application with the main form
+                    Application.Run(mainForm);
                 }
             }
-            else
-            {
-                // If it is a Dugong system, create and show the main form
-                MainForm form = new MainForm();
-                
-                // Close splash screen immediately
-                splash.Close();
-                
-                form.FormClosed += delegate
-                {
-                    Application.Exit();
-                };
-                
-                // Show the main form
-                form.Show();
-            }
-        };
-        systemCheckTimer.Start();
-        
-        Application.Run();
+        }
     }
 
     private static bool IsFileAvailable(string fileName)
