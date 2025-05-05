@@ -1,13 +1,13 @@
 # DugongDiagnosticPro
-[![GitHub license](https://img.shields.io/github/license/DugongDiagnosticPro/DugongDiagnosticPro)](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/LibreHardwareMonitor/LibreHardwareMonitor)](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/blob/master/LICENSE)
 
-Dugong Diagnostic Pro is a powerful desktop utility designed to quickly diagnose and troubleshoot hardware issues on your Dugong PC. From CPU performance and memory health to disk integrity and GPU stability, Dugong delivers accurate diagnostics with an intuitive interface.
+DugongDiagnosticPro, based on LibreHardwareMonitor, is free software that can monitor the temperature sensors, fan speeds, voltages, load and clock speeds of your computer. Brought to you by Dugong International Private Limited.
 
 ## What's included?
 | Name| .NET | Build Status |
 | --- | --- | --- | 
-| **DugongDiagnosticPro** <br /> Windows Forms based application that presents all data in a graphical interface | .NET Framework 4.7.2 | [![Build status](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/workflows/CI/badge.svg)](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/actions) | 
-| **DugongDiagnosticProLib** <br /> Library that allows you to use all features in your own application | .NET Framework 4.7.2, .NET 6.0, and .NET 8.0 | [![Build status](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/workflows/CI/badge.svg)](https://github.com/DugongDiagnosticPro/DugongDiagnosticPro/actions) | 
+| **DugongDiagnosticPro** <br /> Windows Forms based application that presents all data in a graphical interface | .NET Framework 4.7.2 | [![Build status](https://img.shields.io/badge/build-stable-brightgreen)]() | 
+| **DugongDiagnosticProLib** <br /> Library that allows you to use all features in your own application | .NET Framework 4.7.2, .NET 6.0, and .NET 8.0 | [![Build status](https://img.shields.io/badge/build-stable-brightgreen)]() | 
 
 ## What can it do?
 You can read information from devices such as:
@@ -18,11 +18,13 @@ You can read information from devices such as:
 - Network cards
 
 ## Where can I download it?
-You can download the latest release from our website [www.dugong.in/dugong-diagnostic-pro](https://www.dugong.in/dugong-diagnostic-pro).
+You can download the latest release from our website: [www.dugong.in/dugong-Diagnostic-pro](https://www.dugong.in/dugong-Diagnostic-pro)
 
-## How can I help improve it?
-The Dugong Diagnostic Pro team welcomes feedback and contributions!<br/>
-You can check if it works properly on your motherboard. For many manufacturers, the way of reading data differs a bit, so if you notice any inaccuracies, please send us a pull request. If you have any suggestions or improvements, don't hesitate to create an issue.
+### Updates
+For the latest updates and information, please visit our website: [www.dugong.in/dugong-Diagnostic-pro](https://www.dugong.in/dugong-Diagnostic-pro)
+
+## Need Help?
+If you need assistance or have any questions, please contact us at: [Diagnostics@dugong.in](mailto:Diagnostics@dugong.in)
 
 ## Developer information
 **Integrate the library in own application**
@@ -93,4 +95,6 @@ Some sensors require administrator privileges to access the data. Restart your I
 
 
 ## License
-Dugong Diagnostic Pro is free and open source software licensed under MPL 2.0. You can use it in private and commercial projects. Keep in mind that you must include a copy of the license in your project.
+DugongDiagnosticPro is based on LibreHardwareMonitor which is free and open source software licensed under MPL 2.0. You can use it in private and commercial projects. Keep in mind that you must include a copy of the license in your project.
+
+This software is distributed by Dugong International Private Limited. Visit our website at [www.dugong.in](https://www.dugong.in) for more information.
