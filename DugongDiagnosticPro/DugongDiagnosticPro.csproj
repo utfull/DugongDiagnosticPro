@@ -52,6 +52,9 @@
     <Compile Update="UI\InterfacePortForm.Designer.cs">
       <DependentUpon>InterfacePortForm.cs</DependentUpon>
     </Compile>
+    <Compile Update="UI\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="UI\AboutBox.resx">
@@ -68,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Update="UI\InterfacePortForm.resx">
       <DependentUpon>InterfacePortForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UI\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

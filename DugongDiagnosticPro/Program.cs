@@ -24,7 +24,8 @@ public static class Program
         if (!AllRequiredFilesAvailable())
             Environment.Exit(0);
             
-        if (!IsDugongSystem())
+        bool isDugongSystem = IsDugongSystem();
+        if (!isDugongSystem)
         {
             MessageBox.Show("Dugong Diagnostic Pro only supports Dugong systems.",
                            "Unsupported System",
@@ -35,14 +36,20 @@ public static class Program
 
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
-        using (MainForm form = new MainForm())
+        
+        SplashScreen splash = new SplashScreen(isDugongSystem);
+        splash.Show();
+        
+        Application.DoEvents();
+        
+        MainForm form = new MainForm();
+        
+        form.FormClosed += delegate
         {
-            form.FormClosed += delegate
-            {
-                Application.Exit();
-            };
-            Application.Run();
-        }
+            Application.Exit();
+        };
+        
+        Application.Run();
     }
 
     private static bool IsFileAvailable(string fileName)
