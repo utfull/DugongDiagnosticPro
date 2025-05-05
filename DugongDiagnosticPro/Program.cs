@@ -16,7 +16,7 @@ namespace DugongDiagnosticPro;
 public static class Program
 {
     // Set this to true when testing on Windows, set to false for production
-    private static readonly bool enableWindowsTest = true;
+    private static readonly bool enableWindowsTest = false;
     
     [STAThread]
     public static void Main()
@@ -24,30 +24,57 @@ public static class Program
         if (!AllRequiredFilesAvailable())
             Environment.Exit(0);
             
-        bool isDugongSystem = IsDugongSystem();
-        if (!isDugongSystem)
-        {
-            MessageBox.Show("Dugong Diagnostic Pro only supports Dugong systems.",
-                           "Unsupported System",
-                           MessageBoxButtons.OK,
-                           MessageBoxIcon.Error);
-            Environment.Exit(0);
-        }
-
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
         
+        // Always show splash screen first, regardless of system type
+        bool isDugongSystem = IsDugongSystem();
         SplashScreen splash = new SplashScreen(isDugongSystem);
         splash.Show();
         
         Application.DoEvents();
         
-        MainForm form = new MainForm();
-        
-        form.FormClosed += delegate
+        // Create a timer to check system type after splash screen has been shown for a few seconds
+        Timer systemCheckTimer = new Timer();
+        systemCheckTimer.Interval = 4000; // 4 seconds
+        systemCheckTimer.Tick += (s, e) =>
         {
-            Application.Exit();
+            systemCheckTimer.Stop();
+            
+            // Now check if it's a Dugong system
+            if (!isDugongSystem)
+            {
+                // Keep the splash screen visible until user clicks OK
+                DialogResult result = MessageBox.Show("Dugong Diagnostic Pro only supports Dugong systems.",
+                                                     "Unsupported System",
+                                                     MessageBoxButtons.OK,
+                                                     MessageBoxIcon.Error);
+                
+                // Only exit after user clicks OK
+                if (result == DialogResult.OK)
+                {
+                    splash.Close();
+                    Environment.Exit(0);
+                }
+            }
+            else
+            {
+                // If it is a Dugong system, create and show the main form
+                MainForm form = new MainForm();
+                
+                // Close splash screen when main form is loaded
+                form.Load += (sender, args) =>
+                {
+                    splash.StartFadeOut();
+                };
+                
+                form.FormClosed += delegate
+                {
+                    Application.Exit();
+                };
+            }
         };
+        systemCheckTimer.Start();
         
         Application.Run();
     }

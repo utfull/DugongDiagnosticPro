@@ -113,22 +113,15 @@ namespace DugongDiagnosticPro.UI
                     opacity = 100;
                     fadeTimer.Stop();
                     
-                    // After fade-in completes, set a timer to start fade-out after 5 seconds
-                    closeTimer = new Timer();
-                    closeTimer.Interval = 5000;
-                    closeTimer.Tick += (s2, e2) =>
-                    {
-                        closeTimer.Stop();
-                        StartFadeOut();
-                    };
-                    closeTimer.Start();
+                    // Don't automatically close the splash screen
+                    // The Program.cs will handle closing it at the appropriate time
                 }
                 this.Opacity = opacity / 100.0;
             };
             fadeTimer.Start();
         }
         
-        private void StartFadeOut()
+        public void StartFadeOut()
         {
             // Create and start the fade-out timer
             fadeTimer = new Timer();
