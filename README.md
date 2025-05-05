@@ -98,3 +98,12 @@ Some sensors require administrator privileges to access the data. Restart your I
 DugongDiagnosticPro is based on LibreHardwareMonitor which is free and open source software licensed under MPL 2.0. You can use it in private and commercial projects. Keep in mind that you must include a copy of the license in your project.
 
 This software is distributed by Dugong International Private Limited. Visit our website at [www.dugong.in](https://www.dugong.in) for more information.
+
+
+## Acknowledgments
+
+This software is based on [LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor), originally licensed under the [Mozilla Public License 2.0](https://www.mozilla.org/MPL/2.0/).
+
+All modifications and distributions by Dugong International Private Limited comply with MPL 2.0 license terms.
+
+🔗 Full license text: [LICENSE.html](./LICENSE.html)
